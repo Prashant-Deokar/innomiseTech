@@ -2,9 +2,7 @@
     <h3 mat-dialog-title>Update User ID: {{data.id}}</h3>
     <div class="scrollable-content">
         <form class="mat-dialog-content" (ngSubmit)="onSubmit" #formControl="ngForm">
-
-
-
+            
             <div class="form">
                 <mat-form-field color="accent">
                     <label for="username">User Name</label>
@@ -43,7 +41,6 @@
                     <input matInput class="form-control" placeholder="phone" [(ngModel)]="data.phone" name="phone">
                 </mat-form-field>
             </div>
-
 
             <div class="form">
                 <mat-form-field color="accent">
