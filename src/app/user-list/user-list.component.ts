@@ -35,7 +35,8 @@ export class UserListComponent implements OnInit {
         this.isLoading = true
       },
       error: (error) => {
-        this.isLoading = true
+        this.isLoading = true;
+        this.toastr.error('Error fetching data:', error);
         console.log(error);
       }
     });
@@ -64,7 +65,7 @@ export class UserListComponent implements OnInit {
         this.users = [newUser, ...this.users];
 
       } else {
-        this.toastr.error('Failed to Add the user. Please try again later.', 'Error');
+        // this.toastr.error('Failed to Add the user. Please try again later.', 'Error');
 
       }
     });
@@ -87,7 +88,7 @@ export class UserListComponent implements OnInit {
         this.toastr.success('User has been successfully deleted!', 'Success');
 
       } else {
-        this.toastr.error('User not Deleted.', 'Cancel ');
+        // this.toastr.error('User not Deleted.', 'Cancel ');
       }
     });
   }
@@ -126,7 +127,7 @@ export class UserListComponent implements OnInit {
         this.users = updatedUsers;
         this.toastr.success('User has been successfully updated!', 'Success');
       } else {
-        this.toastr.error('Failed to edit the user. Please try again later.', 'Error');
+        // this.toastr.error('Failed to edit the user. Please try again later.', 'Error');
       }
     });
   }
@@ -139,7 +140,7 @@ export class UserListComponent implements OnInit {
         this.users = data.users;
       },
       error: (error: any) => {
-        console.error('Error fetching data:', error);
+        this.toastr.error('Error fetching data:', error);
       }
     });
   }
