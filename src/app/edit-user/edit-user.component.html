@@ -1,0 +1,65 @@
+<div class="container">
+    <h3 mat-dialog-title>Update User ID: {{data.id}}</h3>
+    <div class="scrollable-content">
+        <form class="mat-dialog-content" (ngSubmit)="onSubmit" #formControl="ngForm">
+
+
+
+            <div class="form">
+                <mat-form-field color="accent">
+                    <label for="username">User Name</label>
+                    <input matInput #input class="form-control" placeholder="username" [(ngModel)]="data.username"
+                        name="title" required>
+                    <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form">
+                <mat-form-field color="accent">
+                    <label for="firstName">First Name</label>
+                    <input matInput class="form-control" placeholder="firstName" [(ngModel)]="data.firstName"
+                        name="firstName">
+                </mat-form-field>
+            </div>
+            <div class="form">
+                <mat-form-field color="accent">
+                    <label for="lastName">Last Name</label>
+                    <input matInput class="form-control" placeholder="lastName" [(ngModel)]="data.lastName"
+                        name="lastName">
+                </mat-form-field>
+            </div>
+            <div class="form">
+                <mat-form-field color="accent">
+                    <label for="email">Email Id</label>
+                    <input matInput #inputstate class="form-control" placeholder="Email" [(ngModel)]="data.email"
+                        name="email" required>
+                    <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form">
+                <mat-form-field color="accent">
+                    <label for="mobile">Mobile Number</label>
+                    <input matInput class="form-control" placeholder="phone" [(ngModel)]="data.phone" name="phone">
+                </mat-form-field>
+            </div>
+
+
+            <div class="form">
+                <mat-form-field color="accent">
+                    <label for="Gender">Gender</label>
+                    <input matInput class="form-control" placeholder="Gender" [(ngModel)]="data.gender" name="gender">
+                </mat-form-field>
+            </div>
+
+            <div mat-dialog-actions>
+
+                <button class="mat-button" type="submit" [disabled]="!formControl.valid"
+                    style="background-color: rgb(196, 48, 48);" [mat-dialog-close]="1"
+                    (click)="onSubmit()">Save</button>
+                <button class="mat-button" (click)="onNoClick()" style="background-color: rgb(17, 151, 223);"
+                    tabindex="-1">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

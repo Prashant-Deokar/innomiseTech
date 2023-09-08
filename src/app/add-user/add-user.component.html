@@ -1,0 +1,61 @@
+<div class="container">
+    <h3 mat-dialog-title>Add User </h3>
+    <div class="scrollable-content">
+        <form [formGroup]="userForm" class="mat-dialog-content" (ngSubmit)="onSubmit">
+
+            <div class="form">
+                <mat-form-field color="accent">
+                    <label for="username">User Name</label>
+                    <input matInput #input class="form-control" placeholder="username" formControlName="username"
+                        name="title" required>
+                    <mat-error *ngIf="userForm.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form">
+                <mat-form-field color="accent">
+                    <label for="firstName">First Name</label>
+                    <input matInput class="form-control" placeholder="firstName" formControlName="firstName"
+                        name="firstName">
+                </mat-form-field>
+            </div>
+            <div class="form">
+                <mat-form-field color="accent">
+                    <label for="lastName">Last Name</label>
+                    <input matInput class="form-control" placeholder="lastName" formControlName="lastName"
+                        name="lastName">
+                </mat-form-field>
+            </div>
+            <div class="form">
+                <mat-form-field color="accent">
+                    <label for="email">Email Id</label>
+                    <input matInput #inputstate class="form-control" placeholder="Email" formControlName="email"
+                        name="email" required>
+                    <mat-error *ngIf="userForm.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form">
+                <mat-form-field color="accent">
+                    <label for="mobile">Mobile Number</label>
+                    <input matInput class="form-control" placeholder="phone" formControlName="phone" name="phone">
+                </mat-form-field>
+            </div>
+            <div class="form">
+                <mat-form-field color="accent">
+                    <label for="Gender">Gender</label>
+                    <input matInput class="form-control" placeholder="Gender" formControlName="gender" name="gender">
+                </mat-form-field>
+            </div>
+
+            <div mat-dialog-actions>
+                <span style="color: red;" *ngIf="error">{{errorMsg}}</span>
+                <button class="mat-button" type="submit" style="background-color: rgb(196, 48, 48);"
+                    (click)="onSubmit()">Add User</button>
+                <button class="mat-button" (click)="onNoClick()"
+                    style="background-color: rgb(17, 151, 223);">Cancel</button>
+            </div>
+
+
+        </form>
+    </div>
+</div>
